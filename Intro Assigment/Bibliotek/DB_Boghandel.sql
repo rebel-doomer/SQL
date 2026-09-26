@@ -46,12 +46,8 @@ VALUES ('1984', 'George Orwell', 'Science Fiction', 120.99),
        ('Free Software, Free Society', 'Richard Stallman', 'Technology', 90.00),
        ('C# 10.0 All-in-One For Dummies', 'John Paul Mueller', 'Technology', 130.00),
        ('Python Programming for Beginners', 'Jason Cannon', 'Technology', 95.00),
-       ('Palaeozoology of Vertebrates', 'Mark P. Witton', 'Science', 140.00),
        ('Pterosaurs: Natural History, Evolution, Anatomy', 'Mark P. Witton', 'Science', 150.00),
        ('The Palaeoartist''s Handbook', 'Mark P. Witton', 'Science', 135.00),
-
-       -- example usage of NULL
-       ('Beowulf', NULL, 'Poetry', 49.99),
 
        -- Warrior Cats: Series 1 (The Prophecies Begin)
        ('Warriors #1: Into the Wild', 'Erin Hunter', 'Fantasy', 65.00),
