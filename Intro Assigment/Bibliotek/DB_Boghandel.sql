@@ -36,6 +36,21 @@ VALUES ('1984', 'George Orwell', 'Science Fiction', 120.99),
        ('My Struggle', 'Booji Boy', 'Art', 105.99),
        ('The Doctrine of Fascism', 'Benito Mussolini', 'History', 90.00),
        ('Mein Kampf', 'Adolf Hitler', 'History', 110.00),
+       ('Dracula', 'Bram Stoker', 'Horror', 85.99),
+       ('Holy Bible: New International Version', NULL, 'Religion', 50.00),
+       ('Frankenstein', 'Mary Shelley', 'Horror', 75.00),
+       ('The Strange Case of Dr. Jekyll and Mr. Hyde', 'Robert Louis Stevenson', 'Horror', 65.00),
+       ('Ubuntu 14.04 LTS Desktop: Applications and Administration', 'Richard Petersen', 'Technology', 110.00),
+       ('Pocket Git Guide', 'Scott Chacon', 'Technology', 80.00),
+       ('Linux For Dummies', 'Richard Blum', 'Technology', 120.00),
+       ('Free Software, Free Society', 'Richard Stallman', 'Technology', 90.00),
+       ('C# 10.0 All-in-One For Dummies', 'John Paul Mueller', 'Technology', 130.00),
+       ('Python Programming for Beginners', 'Jason Cannon', 'Technology', 95.00),
+       ('Palaeozoology of Vertebrates', 'Mark P. Witton', 'Science', 140.00),
+       ('Pterosaurs: Natural History, Evolution, Anatomy', 'Mark P. Witton', 'Science', 150.00),
+       ('The Palaeoartist''s Handbook', 'Mark P. Witton', 'Science', 135.00),
+
+       -- example usage of NULL
        ('Beowulf', NULL, 'Poetry', 49.99),
 
        -- Warrior Cats: Series 1 (The Prophecies Begin)
