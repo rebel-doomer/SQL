@@ -48,6 +48,7 @@ VALUES ('1984', 'George Orwell', 'Science Fiction', 120.99),
        ('Python Programming for Beginners', 'Jason Cannon', 'Technology', 95.00),
        ('Pterosaurs: Natural History, Evolution, Anatomy', 'Mark P. Witton', 'Science', 150.00),
        ('The Palaeoartist''s Handbook', 'Mark P. Witton', 'Science', 135.00),
+       ('The Great Gatsby', 'F. Scott Fitzgerald', 'Fiction', 95.00),
 
        -- Warrior Cats: Series 1 (The Prophecies Begin)
        ('Warriors #1: Into the Wild', 'Erin Hunter', 'Fantasy', 65.00),
@@ -74,6 +75,10 @@ VALUES ('1984', 'George Orwell', 'Science Fiction', 120.99),
        ('Warriors: Mapleshade''s Vengeance', 'Erin Hunter', 'Fantasy', 45.00),
        ('Warriors: Goosefeather''s Curse', 'Erin Hunter', 'Fantasy', 45.00),
        ('Warriors: Ravenpaw''s Farewell', 'Erin Hunter', 'Fantasy', 45.00);
+
+UPDATE Books
+SET price = 30.00
+WHERE title = 'The Great Gatsby';
 
 INSERT INTO Customers
     (name, address, telephone_number, purchased_books)
