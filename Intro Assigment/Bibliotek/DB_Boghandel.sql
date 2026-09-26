@@ -26,17 +26,43 @@ VALUES ('1984', 'George Orwell', 'Science Fiction', 120.99),
        ('To Kill a Mockingbird', 'Harper Lee', 'Fiction', 140.99),
        ('Call of Cthulhu', 'Howard P. Lovecraft', 'Science Fiction', 70.99),
        ('The Raven', 'Edgar Allan Poe', 'Horror', 70.99),
-       ('Call of Cthulhu', 'Howard P. Lovecraft', 'Science Fiction', 70.99);
-        ('Penpal', 'Dathan Auerbach', 'Horror', 99.99);
-        ('House of Leaves', 'Mark Z. Danielewski', 'Horror', 130.99);
-        ('The Long Hard Road Out of Hell', 'Marilyn Manson', 'Autobiography', 115.99);
-        ('The Book of the SubGenius', 'Ivan Stang', 'Satire', 125.99),
-        ('The Beginning of the End', 'Oscar Kiss Maerth', 'Philosophy', 95.99),
-        ('Jocko-Homo Heaven Bound', 'B. H. Shadduck', 'Philosophy', 85.99);
-        ('My Struggle', 'Booji Boy', 'Art', 105.99);
-        ('The Doctrine of Fascism', 'Benito Mussolini', 'History', 90.00),
-        ('Mein Kampf', 'Adolf Hitler', 'History', 110.00),
-        ('Beowulf', NULL, 'Poetry', 49.99);
+       ('Call of Cthulhu', 'Howard P. Lovecraft', 'Science Fiction', 70.99),
+       ('Penpal', 'Dathan Auerbach', 'Horror', 99.99),
+       ('House of Leaves', 'Mark Z. Danielewski', 'Horror', 130.99),
+       ('The Long Hard Road Out of Hell', 'Marilyn Manson', 'Autobiography', 115.99),
+       ('The Book of the SubGenius', 'Ivan Stang', 'Satire', 125.99),
+       ('The Beginning of the End', 'Oscar Kiss Maerth', 'Philosophy', 95.99),
+       ('Jocko-Homo Heaven Bound', 'B. H. Shadduck', 'Philosophy', 85.99),
+       ('My Struggle', 'Booji Boy', 'Art', 105.99),
+       ('The Doctrine of Fascism', 'Benito Mussolini', 'History', 90.00),
+       ('Mein Kampf', 'Adolf Hitler', 'History', 110.00),
+       ('Beowulf', NULL, 'Poetry', 49.99),
+
+       -- Warrior Cats: Series 1 (The Prophecies Begin)
+       ('Warriors #1: Into the Wild', 'Erin Hunter', 'Fantasy', 65.00),
+       ('Warriors #2: Fire and Ice', 'Erin Hunter', 'Fantasy', 65.00),
+       ('Warriors #3: Forest of Secrets', 'Erin Hunter', 'Fantasy', 65.00),
+       ('Warriors #4: Rising Storm', 'Erin Hunter', 'Fantasy', 65.00),
+       ('Warriors #5: A Dangerous Path', 'Erin Hunter', 'Fantasy', 65.00),
+       ('Warriors #6: The Darkest Hour', 'Erin Hunter', 'Fantasy', 65.00),
+
+       -- Warrior Cats: Key Super Editions
+       ('Warriors: Firestar''s Quest', 'Erin Hunter', 'Fantasy', 95.00),
+       ('Warriors: Bluestar''s Prophecy', 'Erin Hunter', 'Fantasy', 95.00),
+       ('Warriors: Crookedstar''s Promise', 'Erin Hunter', 'Fantasy', 95.00),
+       ('Warriors: Yellowfang''s Secret', 'Erin Hunter', 'Fantasy', 95.00),
+       ('Warriors: Tallstar''s Revenge', 'Erin Hunter', 'Fantasy', 95.00),
+
+       -- Warrior Cats: Novellas & Short Collections
+       ('Warriors: Hollyleaf''s Story', 'Erin Hunter', 'Fantasy', 45.00),
+       ('Warriors: Mistystar''s Omen', 'Erin Hunter', 'Fantasy', 45.00),
+       ('Warriors: Cloudstar''s Journey', 'Erin Hunter', 'Fantasy', 45.00),
+       ('Warriors: Tigerclaw''s Fury', 'Erin Hunter', 'Fantasy', 45.00),
+       ('Warriors: Leafpool''s Wish', 'Erin Hunter', 'Fantasy', 45.00),
+       ('Warriors: Dovewing''s Silence', 'Erin Hunter', 'Fantasy', 45.00),
+       ('Warriors: Mapleshade''s Vengeance', 'Erin Hunter', 'Fantasy', 45.00),
+       ('Warriors: Goosefeather''s Curse', 'Erin Hunter', 'Fantasy', 45.00),
+       ('Warriors: Ravenpaw''s Farewell', 'Erin Hunter', 'Fantasy', 45.00);
 
 INSERT INTO Customers
     (name, address, telephone_number, purchased_books)
