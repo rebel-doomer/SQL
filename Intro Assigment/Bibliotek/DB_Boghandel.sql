@@ -26,7 +26,7 @@ VALUES ('1984', 'George Orwell', 'Science Fiction', 120.99),
        ('To Kill a Mockingbird', 'Harper Lee', 'Fiction', 140.99),
        ('Call of Cthulhu', 'Howard P. Lovecraft', 'Science Fiction', 70.99),
        ('The Raven', 'Edgar Allan Poe', 'Horror', 70.99),
-       ('Call of Cthulhu', 'Howard P. Lovecraft', 'Science Fiction', 70.99),
+       ('Dagon', 'Howard P. Lovecraft', 'Science Fiction', 70.99),
        ('Penpal', 'Dathan Auerbach', 'Horror', 99.99),
        ('House of Leaves', 'Mark Z. Danielewski', 'Horror', 130.99),
        ('The Long Hard Road Out of Hell', 'Marilyn Manson', 'Autobiography', 115.99),
@@ -86,10 +86,23 @@ VALUES ('Simonas Petrauskas', 'Gedimino pr. 12, Vilnius, Lithuania', '3705212345
        ('Freja Jensen', 'Nørrebrogade 45, 2200 København N, Denmark', '4535301234', 1),
        ('Harry Mason', 'Elm Street 13, USA', '5550192834', 17),
        ('Silent Bob', 'Hell Street 12, USA', '5550192774', 1),
-       ('James Sunderland', 'Silent Hill Street, USA', '5550192666', 10);
+       ('James Sunderland', 'Silent Hill Street, USA', '5550192666', 10),
+       ('Fox Mulder', '2630 Hadden Hall Dr, Apt 42, Arlington, VA, USA', '5550199311', 2),
+       ('Dana Scully', '3170 W. 53rd St, Apt 35, Annapolis, MD, USA', '5550199312', 4),
+       ('Agent Cooper', 'Great Northern Hotel, Rm 315, Twin Peaks, WA, USA', '5550199010', 5),
+       ('Clarice Starling', 'FBI Academy, Quantico, VA, USA', '5550199100', 6),
+       ('Thomas Anderson', '101 Adams St, Apt 139, Capital City, USA', '5550199911', 7),
+       ('Buffy Summers', '1630 Revello Dr, Sunnydale, CA, USA', '5550199701', 8),
+       ('Marty McFly', '9303 Lyon Dr, Hill Valley, CA, USA', '5550198510', 9),
+       ('Ellen Ripley', 'Weyland-Yutani Corp HQ, Gateway Station, USA', '5550197908', 11),
+       ('Sarah Connor', '120 North Los Angeles St, Los Angeles, CA, USA', '5550198400', 12),
+       ('Gordon Freeman', 'Black Mesa Research Facility, Sector C, NM, USA', '5550199800', 13),
+       ('Laura Palmer', '708 33rd St, Twin Peaks, WA, USA', '5550199011', 14),
+       ('Giles Rupert', '1630 Revello Dr, Sunnydale, CA, USA', '5550199702', 15),
+       ('Patrick Bateman', '55 W 81st St, Apt 11D, New York, NY, USA', '5550199111', 16);
 
--- SELECT title, author
--- FROM Books;
+SELECT title, author
+FROM Books;
 
 -- Exercise 9: LEFT JOIN
 -- Create an SQL query that combines data from both tables (Books and Customers) using a LEFT JOIN
@@ -100,3 +113,11 @@ SELECT Books.title,
 FROM Books
          LEFT JOIN Customers
                    ON Books.id = Customers.purchased_books;
+
+SELECT Books.title,
+       Books.author,
+       Customers.name,
+       Customers.telephone_number
+FROM Books
+         RIGHT JOIN Customers
+                    ON Books.id = Customers.purchased_books;
