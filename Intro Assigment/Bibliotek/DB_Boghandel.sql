@@ -1,23 +1,36 @@
 CREATE DATABASE IF NOT EXISTS DB_Boghandel;
 USE DB_Boghandel;
 
+-- ============================================================================
+-- EXERCISE 16 & 17: TABLE CREATION (PRIMARY KEY & FOREIGN KEY)
+-- ============================================================================
+
+-- Exercise 16: Primary Key explicitly defined
+-- Exercise 17: Foreign Key relationship established between Customers and Books
 CREATE OR REPLACE TABLE Books
 (
-    id     INT AUTO_INCREMENT PRIMARY KEY,
+    id     INT AUTO_INCREMENT,
     title  VARCHAR(512),
     author VARCHAR(512),
     genre  VARCHAR(128),
-    price  DECIMAL(10, 2)
+    price  DECIMAL(10, 2),
+    CONSTRAINT PK_Books PRIMARY KEY (id) -- Explicit Primary Key constraint
 );
 
 CREATE OR REPLACE TABLE Customers
 (
-    id               INT AUTO_INCREMENT PRIMARY KEY,
+    id               INT AUTO_INCREMENT,
     name             VARCHAR(512),
     address          VARCHAR(512),
     telephone_number VARCHAR(128),
-    purchased_books  INT
+    purchased_books  INT,
+    CONSTRAINT PK_Customers PRIMARY KEY (id),                                         -- Explicit Primary Key constraint
+    CONSTRAINT FK_Customers_Books FOREIGN KEY (purchased_books) REFERENCES Books (id) -- Foreign Key constraint
 );
+
+-- ============================================================================
+-- DATA INSERTION & UPDATES
+-- ============================================================================
 
 INSERT INTO Books
     (title, author, genre, price)
@@ -101,72 +114,44 @@ VALUES ('Simonas Petrauskas', 'Gedimino pr. 12, Vilnius, Lithuania', '3705212345
        ('Giles Rupert', '1630 Revello Dr, Sunnydale, CA, USA', '5550199702', 15),
        ('Patrick Bateman', '55 W 81st St, Apt 11D, New York, NY, USA', '5550199111', 16);
 
-SELECT title, author
-FROM Books;
-
 -- ============================================================================
 -- PREVIOUS EXERCISES (STORED AS NOTES)
 -- ============================================================================
 
--- Exercise 9: LEFT JOIN
--- SELECT Books.title AS title,
---        Books.price AS price,
---        Books.author AS author,
---        Customers.name AS customer_name
--- FROM Books
---          LEFT JOIN Customers ON Books.id = Customers.purchased_books;
+-- Exercise 11 & 12: FULL OUTER JOIN Simulation
+-- SELECT Books.title AS title, Books.price AS price, Books.author AS author, Customers.name AS customer_name
+-- FROM Books LEFT JOIN Customers ON Books.id = Customers.purchased_books
+-- UNION
+-- SELECT Books.title AS title, Books.price AS price, Books.author AS author, Customers.name AS customer_name
+-- FROM Books RIGHT JOIN Customers ON Books.id = Customers.purchased_books;
 
--- Exercise 10: RIGHT JOIN
--- SELECT Books.title AS title,
---        Books.price AS price,
---        Books.author AS author,
---        Customers.name AS customer_name
--- FROM Books
---          RIGHT JOIN Customers ON Books.id = Customers.purchased_books;
+-- Exercise 13: INNER JOIN
+-- SELECT Books.title AS title, Books.price AS price, Books.author AS author, Customers.name AS customer_name
+-- FROM Books INNER JOIN Customers ON Books.id = Customers.purchased_books;
 
 -- ============================================================================
 -- CURRENT EXERCISES
 -- ============================================================================
 
--- Exercise 11: FULL JOIN (Standard ANSI syntax - commented out due to MySQL limitation)
--- SELECT Books.title AS title,
---        Books.price AS price,
---        Books.author AS author,
---        Customers.name AS customer_name
--- FROM Books
---          FULL JOIN Customers ON Books.id = Customers.purchased_books;
-
--- Exercise 12: FULL OUTER JOIN (Standard ANSI syntax - commented out due to MySQL limitation)
--- SELECT Books.title AS title,
---        Books.price AS price,
---        Books.author AS author,
---        Customers.name AS customer_name
--- FROM Books
---          FULL OUTER JOIN Customers ON Books.id = Customers.purchased_books;
-
--- Exercise 11 & 12 (MySQL / MariaDB Working FULL OUTER JOIN Simulation)
--- Combines LEFT JOIN and RIGHT JOIN with UNION to achieve a FULL OUTER JOIN
-SELECT Books.title    AS title,
-       Books.price    AS price,
-       Books.author   AS author,
-       Customers.name AS customer_name
+-- Exercise 14: SQL GROUP BY
+-- Groups books by Genre and counts total books per genre
+SELECT genre, COUNT(*) AS total_books
 FROM Books
-         LEFT JOIN Customers ON Books.id = Customers.purchased_books
+GROUP BY genre;
 
-UNION
+-- Exercise 15: SQL STORED PROCEDURE
+-- Procedure that receives a genre string parameter and retrieves matching books
+DELIMITER //
 
-SELECT Books.title    AS title,
-       Books.price    AS price,
-       Books.author   AS author,
-       Customers.name AS customer_name
-FROM Books
-         RIGHT JOIN Customers ON Books.id = Customers.purchased_books;
+CREATE PROCEDURE GetBooksByGenre(IN input_genre VARCHAR(128))
+BEGIN
+    SELECT id, title, author, genre, price
+    FROM Books
+    WHERE genre = input_genre;
+END //
 
--- Exercise 13: INNER JOIN
--- Returns only rows where there is a match between Books and Customers
-SELECT Books.title    AS title,
-       Books.price    AS price,
-       Books.author   AS author,
-       Customers.name AS customer_name
-FROM Books
-         INNER JOIN Customers ON Books.id = Customers.purchased_books;
+DELIMITER ;
+
+-- How to call Exercise 15's Stored Procedure:
+-- CALL GetBooksByGenre('Fantasy');
+-- CALL GetBooksByGenre('Technology');
