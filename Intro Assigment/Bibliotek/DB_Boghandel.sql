@@ -88,5 +88,13 @@ VALUES ('Simonas Petrauskas', 'Gedimino pr. 12, Vilnius, Lithuania', '3705212345
        ('Silent Bob', 'Hell Street 12, USA', '5550192774', 1),
        ('James Sunderland', 'Silent Hill Street, USA', '5550192666', 10);
 
-SELECT title, author
-FROM Books;
+-- SELECT title, author
+-- FROM Books;
+
+SELECT Books.title,
+       Books.author,
+       Customers.name AS customer_name,
+       Customers.telephone_number
+FROM Books
+         LEFT JOIN Customers
+                   ON Books.id = Customers.purchased_books;
