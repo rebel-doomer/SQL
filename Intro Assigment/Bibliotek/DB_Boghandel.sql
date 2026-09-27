@@ -91,6 +91,8 @@ VALUES ('Simonas Petrauskas', 'Gedimino pr. 12, Vilnius, Lithuania', '3705212345
 -- SELECT title, author
 -- FROM Books;
 
+-- Exercise 9: LEFT JOIN
+-- Create an SQL query that combines data from both tables (Books and Customers) using a LEFT JOIN
 SELECT Books.title,
        Books.author,
        Customers.name AS customer_name,
