@@ -104,9 +104,11 @@ VALUES ('Simonas Petrauskas', 'Gedimino pr. 12, Vilnius, Lithuania', '3705212345
 SELECT title, author
 FROM Books;
 
+-- ============================================================================
+-- PREVIOUS EXERCISES (STORED AS NOTES)
+-- ============================================================================
+
 -- Exercise 9: LEFT JOIN
--- Create an SQL query that combines data from both tables (Books and Customers) using a LEFT JOIN
--- LEFT JOIN
 -- SELECT Books.title AS title,
 --        Books.price AS price,
 --        Books.author AS author,
@@ -114,7 +116,7 @@ FROM Books;
 -- FROM Books
 --          LEFT JOIN Customers ON Books.id = Customers.purchased_books;
 
--- RIGHT JOIN
+-- Exercise 10: RIGHT JOIN
 -- SELECT Books.title AS title,
 --        Books.price AS price,
 --        Books.author AS author,
@@ -122,7 +124,28 @@ FROM Books;
 -- FROM Books
 --          RIGHT JOIN Customers ON Books.id = Customers.purchased_books;
 
--- FULL JOIN (Simulated using LEFT JOIN, UNION, and RIGHT JOIN)
+-- ============================================================================
+-- CURRENT EXERCISES
+-- ============================================================================
+
+-- Exercise 11: FULL JOIN (Standard ANSI syntax - commented out due to MySQL limitation)
+-- SELECT Books.title AS title,
+--        Books.price AS price,
+--        Books.author AS author,
+--        Customers.name AS customer_name
+-- FROM Books
+--          FULL JOIN Customers ON Books.id = Customers.purchased_books;
+
+-- Exercise 12: FULL OUTER JOIN (Standard ANSI syntax - commented out due to MySQL limitation)
+-- SELECT Books.title AS title,
+--        Books.price AS price,
+--        Books.author AS author,
+--        Customers.name AS customer_name
+-- FROM Books
+--          FULL OUTER JOIN Customers ON Books.id = Customers.purchased_books;
+
+-- Exercise 11 & 12 (MySQL / MariaDB Working FULL OUTER JOIN Simulation)
+-- Combines LEFT JOIN and RIGHT JOIN with UNION to achieve a FULL OUTER JOIN
 SELECT Books.title    AS title,
        Books.price    AS price,
        Books.author   AS author,
@@ -138,3 +161,12 @@ SELECT Books.title    AS title,
        Customers.name AS customer_name
 FROM Books
          RIGHT JOIN Customers ON Books.id = Customers.purchased_books;
+
+-- Exercise 13: INNER JOIN
+-- Returns only rows where there is a match between Books and Customers
+SELECT Books.title    AS title,
+       Books.price    AS price,
+       Books.author   AS author,
+       Customers.name AS customer_name
+FROM Books
+         INNER JOIN Customers ON Books.id = Customers.purchased_books;
