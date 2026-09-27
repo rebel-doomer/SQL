@@ -106,18 +106,35 @@ FROM Books;
 
 -- Exercise 9: LEFT JOIN
 -- Create an SQL query that combines data from both tables (Books and Customers) using a LEFT JOIN
-SELECT Books.title,
-       Books.author,
-       Customers.name,
-       Customers.telephone_number
-FROM Books
-         LEFT JOIN Customers
-                   ON Books.id = Customers.purchased_books;
+-- LEFT JOIN
+-- SELECT Books.title AS title,
+--        Books.price AS price,
+--        Books.author AS author,
+--        Customers.name AS customer_name
+-- FROM Books
+--          LEFT JOIN Customers ON Books.id = Customers.purchased_books;
 
-SELECT Books.title,
-       Books.author,
-       Customers.name,
-       Customers.telephone_number
+-- RIGHT JOIN
+-- SELECT Books.title AS title,
+--        Books.price AS price,
+--        Books.author AS author,
+--        Customers.name AS customer_name
+-- FROM Books
+--          RIGHT JOIN Customers ON Books.id = Customers.purchased_books;
+
+-- FULL JOIN (Simulated using LEFT JOIN, UNION, and RIGHT JOIN)
+SELECT Books.title    AS title,
+       Books.price    AS price,
+       Books.author   AS author,
+       Customers.name AS customer_name
 FROM Books
-         RIGHT JOIN Customers
-                    ON Books.id = Customers.purchased_books;
+         LEFT JOIN Customers ON Books.id = Customers.purchased_books
+
+UNION
+
+SELECT Books.title    AS title,
+       Books.price    AS price,
+       Books.author   AS author,
+       Customers.name AS customer_name
+FROM Books
+         RIGHT JOIN Customers ON Books.id = Customers.purchased_books;
