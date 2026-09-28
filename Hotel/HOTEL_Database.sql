@@ -3,6 +3,8 @@ USE HOTEL_Database;
 -- as your active database so that any tables or queries you run next are applied directly inside it.
 -- Tells the database to create a new table named HOTEL and opens a parenthesis to hold the definitions for all of its columns.
 CREATE TABLE HOTEL
+
+-- Task 1
 ( -- Creates the no column as an integer (INT). It sets it as the PRIMARY KEY (making it the unique identifier for each row) and applies a CHECK constraint to restrict the allowed numbers strictly between 1 and 5.
     hotel_id INT NOT NULL,
     name    VARCHAR(30) NOT NULL,
