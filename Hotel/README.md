@@ -19,13 +19,13 @@ hotels. Two tables are therefore requested:
 
 ## Task 1: Analysis and Design
 
-- [ ] **List Attributes and Domains**: Create a list of the attributes for each table as you should define domains for
+- [x] **List Attributes and Domains**: Create a list of the attributes for each table as you should define domains for
   each attribute (why?). Carefully consider each attribute's domain.
-- [ ] **Database Design & Keys**: Determine candidate keys and primary key for each table and make a Database design
+- [x] **Database Design & Keys**: Determine candidate keys and primary key for each table and make a Database design
   (Visio or MySQL Workbench).
-- [ ] **Nullability and Defaults**: Consider carefully for each attribute whether it may assume the value of `NULL` and
+- [x] **Nullability and Defaults**: Consider carefully for each attribute whether it may assume the value of `NULL` and
   whether there is an obvious default value.
-- [ ] **Relationships**: Consider how the connection is created between the two tables — i.e., where should there be a
+- [x] **Relationships**: Consider how the connection is created between the two tables — i.e., where should there be a
   foreign key and what primary key (or candidate key) should it refer to.
 
 ---
@@ -73,4 +73,4 @@ script. It will thus be easier to make changes and then carry out the whole defi
 
 ### Credits
 
-Jesse, Oliver Benjamin, Kasper Gimm
+Jesse, Oliver Benjamin
