@@ -73,4 +73,4 @@ script. It will thus be easier to make changes and then carry out the whole defi
 
 ### Credits
 
-Jesse, Oliver Benjamin, Kasper Gimm
+Jesse, Oliver Benjamin
