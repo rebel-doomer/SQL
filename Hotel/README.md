@@ -70,3 +70,7 @@ script. It will thus be easier to make changes and then carry out the whole defi
 - [ ] **Backup Database**: Back up the database you have defined to the script `ZBChotelDef.sql`.
 - [ ] **Test Backup**: Test that your backup works — by dropping your database and using your backup to put data back
   in.
+
+### Credits
+
+Jesse, Kasper Gimm
