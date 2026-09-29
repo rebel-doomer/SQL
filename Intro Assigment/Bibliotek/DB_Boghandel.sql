@@ -144,16 +144,16 @@ GROUP BY genre;
 
 -- Exercise 15: SQL STORED PROCEDURE
 -- Procedure that receives a genre string parameter and retrieves matching books
-DELIMITER //
-
+DELIMITER // -- redefine delimeter with double slash so it does not prematurely end the execution before it can stop/properly close
+-- stored procedures are problematic to write, unless u change the delimeter
 CREATE PROCEDURE GetBooksByGenre(IN input_genre VARCHAR(128))
-BEGIN
+BEGIN -- begin and end function definition, just like curly braces in C#
     SELECT id, title, author, genre, price
     FROM Books
     WHERE genre = input_genre;
 END //
 
-DELIMITER ;
+DELIMITER ; -- delimeter ends a line
 
 -- How to call Exercise 15's Stored Procedure:
 -- CALL GetBooksByGenre('Fantasy');
