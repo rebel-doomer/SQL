@@ -14,6 +14,7 @@ CREATE OR REPLACE TABLE Books
     author VARCHAR(512),
     genre  VARCHAR(128),
     price  DECIMAL(10, 2),
+    -- primary key indexes stuff so u do less work, constraints enforce rules in a database. primary keys should have no reason to ever change, ideally.
     CONSTRAINT PK_Books PRIMARY KEY (id) -- Explicit Primary Key constraint
 );
 
@@ -27,6 +28,7 @@ CREATE OR REPLACE TABLE Customers
     CONSTRAINT PK_Customers PRIMARY KEY (id),                                         -- Explicit Primary Key constraint
     CONSTRAINT FK_Customers_Books FOREIGN KEY (purchased_books) REFERENCES Books (id) -- Foreign Key constraint
 );
+-- foreign key references primary key that sits in another table, making it foreign
 
 -- ============================================================================
 -- DATA INSERTION & UPDATES
