@@ -2,6 +2,9 @@ CREATE DATABASE IF NOT EXISTS HOTEL_Database; -- Checks your server to see if a 
 USE HOTEL_Database;
 -- as your active database so that any tables or queries you run next are applied directly inside it.
 -- Tells the database to create a new table named HOTEL and opens a parenthesis to hold the definitions for all of its columns.
+DROP TABLE IF EXISTS ROOM;
+DROP TABLE IF EXISTS HOTEL;
+
 CREATE TABLE HOTEL
 
 -- Task 1
@@ -20,11 +23,11 @@ create table ROOM
     room_type char(1) NOT NULL,
     price decimal(6, 2) NOT NULL,
     constraint PK_ROOM PRIMARY KEY (room_num, hotel_id),
-    constraint FK_ROOM_HOTEL FOREIGN KEY (hotel_id) REFERENCES HOTEL(hotel_id)
-    references HOTEL(hotel_id)
-    on update cascade
-    on delete restrict,
-     CONSTRAINT chk_room_type CHECK (room_type IN ('D', 'F', 'S')),
+    constraint FK_ROOM_HOTEL FOREIGN KEY (hotel_id)
+        REFERENCES HOTEL(hotel_id)
+        on update cascade
+        on delete restrict,
+    CONSTRAINT chk_room_type CHECK (room_type IN ('D', 'F', 'S')),
     CONSTRAINT chk_price CHECK (price >= 0 AND price <= 9999.99)
 );
 
@@ -42,15 +45,15 @@ select * from HOTEL;
 -- Insert room data
 insert into ROOM (room_num, hotel_id, room_type, price) values
 (1, 1, 'D', 200),
-(1, 2, 'D', 200),
-(1, 11, 'S', 150),
-(1, 21, 'F', 220),
-(2, 1, 'D', 230),
+(2, 1, 'D', 200),
+(11, 1, 'S', 150),
+(21, 1, 'F', 220),
+(1, 2, 'D', 230),
 (2, 2, 'D', 230),
-(2, 11, 'S', 180),
-(2, 21, 'F', 300),
-(3, 1, 'D', 175),
-(5, 2, 'D', 170);
+(11, 2, 'S', 180),
+(21, 2, 'F', 300),
+(1, 3, 'D', 175),
+(2, 5, 'D', 170);
 
 -- verify room data
 select * from ROOM;

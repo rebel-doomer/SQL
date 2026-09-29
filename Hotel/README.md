@@ -40,14 +40,14 @@ hotels. Two tables are therefore requested:
 
 ## Task 3: Data Insertion and Verification
 
-- [ ] **Insert Hotel Data**: Insert the following data in the `HOTEL` table:
+- [x] **Insert Hotel Data**: Insert the following data in the `HOTEL` table:
     - `1` | `The Pope` | `Vatikangade 1, 1111 Bispeborg`
     - `2` | `Lucky Star` | `Bredgade 12, 2222 Hometown`
     - `3` | `Discount` | `Cheap Road 7, 3333 Lilleby`
     - `4` | `deLuxe` | `Kapital Avenue 99, 4444 Borgerslev`
     - `5` | `Discount` | `Billiggade 12, 6666 Roslev`
-- [ ] **Verify Hotels**: Use `SELECT * FROM HOTEL` to view all data from the table.
-- [ ] **Insert Room Data**: Insert the following data in the `RUM` table:
+- [x] **Verify Hotels**: Use `SELECT * FROM HOTEL` to view all data from the table.
+- [x] **Insert Room Data**: Insert the following data in the `RUM` table:
     - `1` | `"The Pope" in Bispeborg` | `D` | `200`
     - `2` | `"The Pope" in Bispeborg` | `D` | `200`
     - `11` | `"The Pope" in Bispeborg` | `S` | `150`
@@ -58,7 +58,7 @@ hotels. Two tables are therefore requested:
     - `21` | `"Lucky Star" in Hometown` | `F` | `300`
     - `1` | `"Discount" in Lilleby` | `D` | `175`
     - `2` | `"Discount" in Roslev` | `D` | `170`
-- [ ] **Verify Rooms**: Use `SELECT * FROM RUM` to view all data from the table.
+- [x] **Verify Rooms**: Use `SELECT * FROM RUM` to view all data from the table.
 
 ---
 
@@ -67,8 +67,8 @@ hotels. Two tables are therefore requested:
 As it turns out that some changes are needed, it is decided that the definition of the database should be executed via a
 script. It will thus be easier to make changes and then carry out the whole definition of anew.
 
-- [ ] **Backup Database**: Back up the database you have defined to the script `ZBChotelDef.sql`.
-- [ ] **Test Backup**: Test that your backup works — by dropping your database and using your backup to put data back
+- [x] **Backup Database**: Back up the database you have defined to the script `ZBChotelDef.sql`.
+- [x] **Test Backup**: Test that your backup works — by dropping your database and using your backup to put data back
   in.
 
 ### Credits
