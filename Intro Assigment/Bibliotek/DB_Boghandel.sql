@@ -89,6 +89,7 @@ VALUES ('1984', 'George Orwell', 'Science Fiction', 120.99),
        ('Warriors: Goosefeather''s Curse', 'Erin Hunter', 'Fantasy', 45.00),
        ('Warriors: Ravenpaw''s Farewell', 'Erin Hunter', 'Fantasy', 45.00);
 
+-- Exercise 5: SQL UPDATE
 UPDATE Books
 SET price = 30.00
 WHERE title = 'The Great Gatsby';
